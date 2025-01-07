@@ -4,7 +4,7 @@ const headerContent = `
         <nav class="flex items-center justify-between">
             <!-- Left: Logo -->
             <a href="https://nctjinn.github.io/Archives/" class="hover:text-gray-300">
-                <img src="\Archives\assets\images\logo.png" alt="Logo" class="w-6 h-6">
+                <img src="/Archives/assets/images/logo.png" alt="Logo" class="w-6 h-6">
             </a>
 
             <!-- Center: Navigation -->
@@ -49,7 +49,7 @@ const headerContent = `
 
             <!-- Right: Profile Icon -->
             <a href="https://github.com/NCTjinn" class="hover:text-gray-300">
-                <img src="\Archives\assets\images\github.png" alt="GitHub" class="w-6 h-6">
+                <img src="/Archives/assets/images/github.png" alt="GitHub" class="w-6 h-6">
             </a>
         </nav>
     </div>
