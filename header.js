@@ -1,16 +1,18 @@
-// Header HTML content with dropdown menu
 const headerContent = `
 <header class="bg-gray-800 text-white py-4">
     <div class="container mx-auto px-4">
         <nav class="flex items-center justify-between">
-            <div class="text-xl font-bold">Your Logo</div>
+            <!-- Left: Logo -->
+            <a href="index.html" class="text-xl font-bold hover:text-gray-300">
+                Your Logo
+            </a>
+
+            <!-- Center: Navigation -->
             <ul class="flex space-x-6">
                 <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
-                <li class="relative">
+                <li class="relative group">
                     <button 
-                        id="services-dropdown" 
-                        class="hover:text-gray-300 flex items-center"
-                        aria-expanded="false"
+                        class="hover:text-gray-300 flex items-center peer"
                     >
                         Services 
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -18,8 +20,7 @@ const headerContent = `
                         </svg>
                     </button>
                     <ul 
-                        id="dropdown-menu" 
-                        class="absolute hidden bg-gray-700 mt-2 py-2 w-48 rounded-md shadow-xl"
+                        class="absolute hidden group-hover:block bg-gray-700 mt-2 py-2 w-48 rounded-md shadow-xl"
                         style="z-index: 1000;"
                     >
                         <li><a href="service1.html" class="block px-4 py-2 hover:bg-gray-600">Service 1</a></li>
@@ -30,6 +31,14 @@ const headerContent = `
                 <li><a href="about.html" class="hover:text-gray-300">About</a></li>
                 <li><a href="contact.html" class="hover:text-gray-300">Contact</a></li>
             </ul>
+
+            <!-- Right: Profile Icon -->
+            <button class="hover:text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </button>
         </nav>
     </div>
 </header>
@@ -38,30 +47,7 @@ const headerContent = `
 // Make header content available globally
 window.headerContent = headerContent;
 
-// Function to initialize dropdown functionality
+// No need for click handlers since we're using hover
 window.initializeHeader = function() {
-    const dropdownButton = document.getElementById('services-dropdown');
-    const dropdownMenu = document.getElementById('dropdown-menu');
-    
-    // Toggle dropdown on button click
-    dropdownButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isExpanded = dropdownButton.getAttribute('aria-expanded') === 'true';
-        dropdownButton.setAttribute('aria-expanded', !isExpanded);
-        dropdownMenu.classList.toggle('hidden');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', () => {
-        dropdownButton.setAttribute('aria-expanded', 'false');
-        dropdownMenu.classList.add('hidden');
-    });
-
-    // Handle keyboard navigation
-    dropdownButton.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            dropdownButton.click();
-        }
-    });
+    // You can add any additional initialization here if needed
 };
