@@ -3,8 +3,8 @@ const headerContent = `
     <div class="container mx-auto px-4">
         <nav class="flex items-center justify-between">
             <!-- Left: Logo -->
-            <a href="index.html" class="text-xl font-bold hover:text-gray-300">
-                Your Logo
+            <a href="https://nctjinn.github.io/Archives/" class="hover:text-gray-300">
+                <img src="../assets/images/logo.png" alt="Logo" class="w-6 h-6">
             </a>
 
             <!-- Center: Navigation -->
@@ -48,12 +48,9 @@ const headerContent = `
             </ul>
 
             <!-- Right: Profile Icon -->
-            <button class="hover:text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                </svg>
-            </button>
+            <a href="https://github.com/NCTjinn" class="hover:text-gray-300">
+                <img src="../assets/images/github.png" alt="GitHub" class="w-6 h-6">
+            </a>
         </nav>
     </div>
 </header>
